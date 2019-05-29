@@ -1,12 +1,12 @@
 # Case-mag
 This is a case return management system developed using flaskrestfull.
 # System Users
- Admin
- Normal user
- Staff
+ 1. Admin
+ 2. Normal user
+ 3. Staff
 # Postman overview
  
-<img src="/home/bafiam/pycharmProject_andela/Case-mag/postman.png"/> 
+<img src="https://github.com/bafiam/Case-mag/blob/develop/postman.png"/> 
 
 
 
@@ -48,3 +48,5 @@ This is a case return management system developed using flaskrestfull.
 
     PendingCases-->/cases/returns/specific/pending
 
+# Author
+Stephen Gumba
