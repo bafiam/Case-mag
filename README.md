@@ -1,21 +1,31 @@
 # Case-mag
 This is a case return management system developed using flaskrestfull.
+# System Users
+ Admin
+ Normal user
+ Staff
+# Postman overview
+ 
+<img src="/home/bafiam/pycharmProject_andela/Case-mag/postman.png"/> 
+
+
+
 # Technology used
- ## flask restfull
- ## postgres--basic sql
- ## PyJWT-jwt token
+ flask restfull
+ postgres--basic sql
+ PyJWT-jwt token
 
 # To create the database
- ## flask db_migrate
+  flask db_migrate
 
 # To drop database
- ##flask db_drop
+  flask db_drop
 
 # To add a default admin
-  ## flask seed_admin
+   flask seed_admin
 
 ### Modify and use the existing.
-  ## .env 
+   .env 
 
 # url_prefix='/api/v1' then .
     Sign_in-->/auth/register
