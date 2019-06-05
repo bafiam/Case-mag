@@ -1,4 +1,5 @@
-from flask_restful import Resource, inputs, reqparse
+from flask_restful import  inputs, reqparse
+from flask_restplus import  Resource
 from flask import g
 
 from caseapp.v1.admin.model import AdminModel
@@ -9,7 +10,7 @@ from caseapp.v1.utils.validations import validate_admin_verify
 
 
 class Verify_user(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('user_username',help="provide the user, username")
         parser.add_argument('is_auth', help="provide an authorisation state(True or false)", type=inputs.boolean)

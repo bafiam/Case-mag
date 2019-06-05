@@ -1,4 +1,5 @@
-from flask_restful import Resource, reqparse
+from flask_restful import  reqparse
+from flask_restplus import  Resource
 from flask import make_response, jsonify
 
 from caseapp.v1.utils.decorators import jwt_token_required
@@ -6,7 +7,7 @@ from caseapp.v1.utils.validations import validate_specific_case_data_empty, vali
 from caseapp.v1.cases.model import CaseModel
 
 class SpecificCase(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('registry',help="provide the registry")
         parser.add_argument('case_type',help="provide a case_type")
@@ -41,7 +42,7 @@ class SpecificCase(Resource):
         'message':specific_case
         }), 201)
 class Specific_case_range(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('registry',help="provide the registry")
         parser.add_argument('case_type',help="provide a case_type")
@@ -74,7 +75,7 @@ class Specific_case_range(Resource):
         'message':case_range
         }))
 class PendingCases(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('registry',help="provide the registry")
         parser.add_argument('from',help="provide from range year")

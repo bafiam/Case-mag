@@ -2,7 +2,8 @@ import datetime
 
 
 from flask import g,make_response, jsonify
-from flask_restful import Resource, reqparse
+from flask_restful import  reqparse
+from flask_restplus import  Resource
 
 from caseapp.v1.cases.model import CaseModel
 from caseapp.v1.utils.decorators import jwt_token_required
@@ -10,7 +11,7 @@ from caseapp.v1.utils.validations import validate_case_data_empty
 
 
 class CaseView(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('registry',help="provide the registry")
         parser.add_argument('case_type',help="provide a case_type")

@@ -1,11 +1,12 @@
-from flask_restful import Resource, reqparse
+from flask_restful import  reqparse
+from flask_restplus import  Resource
 from caseapp.v1.utils.validations import validate_staff_data_not_empty
 from caseapp.v1.admin.model import AdminModel
 from flask import g
 from caseapp.v1.utils.decorators import jwt_admin_required,jwt_token_required
 
 class AddStaff(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('surname',help="provide the staf surname")
         parser.add_argument('first_name',help="provide the staff firstname")
@@ -63,7 +64,7 @@ class AddStaff(Resource):
         
 
 class Staff_CRUD(Resource):
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('surname',help="provide the staf surname")
         parser.add_argument('first_name',help="provide the staff firstname")

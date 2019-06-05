@@ -1,5 +1,6 @@
 from flask import Flask
-from flask_restful import Api
+#from flask_restful import Api
+from flask_restplus import Api
 
 import caseapp
 from instance.config import app_config
@@ -16,7 +17,7 @@ def create_app(config_name):
 
 
     # Adding the  blueprints
-    api=Api(version_1)
+    api=Api(app=app, doc='/docs', title='Judical Case returns API',description='A simple Judical Case returns API that consist of an Admin, and IT staff who enter monthy case returns')
 
     #Adding routes
     from caseapp.v1.auth.sign import Sign_in
@@ -52,5 +53,6 @@ def create_app(config_name):
 
      # register blueprints
     app.register_blueprint(version_1)
+    
 
     return app

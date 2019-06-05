@@ -1,7 +1,8 @@
 
 
 from flask import jsonify
-from flask_restful import Resource, reqparse
+from flask_restplus import  Resource
+from flask_restful import  reqparse
 from flask_restful.utils.cors import make_response
 
 from caseapp.v1.auth.model import UserModel
@@ -13,7 +14,7 @@ from caseapp.v1.utils.validations import (hash_user_password,
 
 class Sign_in(Resource):
    
-    def __init__(self):
+    def __init__(self,*args, **kwargs):
         parser =reqparse.RequestParser()
         parser.add_argument('username',help="provide your username")
         parser.add_argument('email', help="provide your email")
